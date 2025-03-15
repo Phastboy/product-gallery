@@ -1,23 +1,19 @@
-import { useCallback, useEffect, useState } from '@lynx-js/react'
+import { useCallback, useEffect, useState } from '@lynx-js/react';
+import './App.css';
+import lynxLogo from './assets/lynx-logo.png';
+import { useNavigate } from 'react-router';
 
-import './App.css'
-import arrow from './assets/arrow.png'
-import lynxLogo from './assets/lynx-logo.png'
-import reactLynxLogo from './assets/react-logo.png'
-import { useNavigate } from 'react-router'
-
-export function App() {
-  const [alterLogo, setAlterLogo] = useState(false)
-  const nav = useNavigate();
+export default function App() {
+  const [alterLogo, setAlterLogo] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    console.info('Hello, ReactLynx')
-  }, [])
+    console.info('Welcome to Mini Social!');
+  }, []);
 
   const onTap = useCallback(() => {
-    'background only'
-    setAlterLogo(!alterLogo)
-  }, [alterLogo])
+    setAlterLogo(!alterLogo);
+  }, [alterLogo]);
 
   return (
     <view>
@@ -25,26 +21,25 @@ export function App() {
       <view className='App'>
         <view className='Banner'>
           <view className='Logo' bindtap={onTap}>
-            {alterLogo
-              ? <image src={reactLynxLogo} className='Logo--react' />
-              : <image src={lynxLogo} className='Logo--lynx' />}
+            <image src={lynxLogo} className={alterLogo ? 'Logo--spin' : 'Logo--static'} />
           </view>
-          <text className='Title'>React</text>
-          <text className='Subtitle'>on Lynx</text>
+          <text className='Title'>Mini Social</text>
+          <text className='Subtitle'>Connect with the world</text>
         </view>
-        <view>
-          <text bindtap={() => nav('/home')}>go home</text>
+        <view className='LoginButtonContainer'>
+          <text className='LoginButton' bindtap={() => navigate('/login')}>
+            Login
+          </text>
         </view>
         <view className='Content'>
-          <image src={arrow} className='Arrow' />
-          <text className='Description'>Tap the logo and have fun!</text>
+          <text className='Description'>Tap the logo to see magic!</text>
           <text className='Hint'>
             Edit<text style={{ fontStyle: 'italic' }}>{' src/App.tsx '}</text>
-            to see updates!
+            to customize this app.
           </text>
         </view>
         <view style={{ flex: 1 }}></view>
       </view>
     </view>
-  )
+  );
 }

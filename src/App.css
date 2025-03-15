@@ -1,25 +1,38 @@
 :root {
-  background-color: #000;
-  --color-text: #fff;
+  background-color: #1a1a1a;
+  --color-primary: #ff6b6b;
+  --color-secondary: #4ecdc4;
+  --color-text: #ffffff;
+  --color-background: #2d2d2d;
+  --color-border: #444444;
 }
 
+/* Background Animation */
 .Background {
   position: fixed;
   background: radial-gradient(
-    71.43% 62.3% at 46.43% 36.43%,
-    rgba(18, 229, 229, 0) 15%,
-    rgba(239, 155, 255, 0.3) 56.35%,
-    #ff6448 100%
+    circle at 50% 50%,
+    rgba(255, 107, 107, 0.2),
+    rgba(78, 205, 196, 0.2),
+    rgba(45, 45, 45, 1)
   );
-  box-shadow: 0px 12.93px 28.74px 0px #ffd28db2 inset;
-  border-radius: 50%;
   width: 200vw;
-  height: 200vw;
-  top: -60vw;
-  left: -14.27vw;
-  transform: rotate(15.25deg);
+  height: 200vh;
+  top: -50vh;
+  left: -50vw;
+  animation: rotateBackground 20s linear infinite;
 }
 
+@keyframes rotateBackground {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* App Container */
 .App {
   position: relative;
   min-height: 100vh;
@@ -27,12 +40,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-text {
+  padding: 20px;
   color: var(--color-text);
 }
 
+/* Banner */
 .Banner {
   flex: 5;
   display: flex;
@@ -49,16 +61,15 @@ text {
   margin-bottom: 8px;
 }
 
-.Logo--react {
+.Logo--static {
   width: 100px;
   height: 100px;
-  animation: Logo--spin infinite 20s linear;
 }
 
-.Logo--lynx {
+.Logo--spin {
   width: 100px;
   height: 100px;
-  animation: Logo--shake infinite 0.5s ease;
+  animation: Logo--spin infinite 2s linear;
 }
 
 @keyframes Logo--spin {
@@ -68,30 +79,6 @@ text {
   to {
     transform: rotate(360deg);
   }
-}
-
-@keyframes Logo--shake {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(0.9);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-.Content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.Arrow {
-  width: 24px;
-  height: 24px;
 }
 
 .Title {
@@ -106,6 +93,14 @@ text {
   margin-bottom: 8px;
 }
 
+/* Content */
+.Content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .Description {
   font-size: 20px;
   color: rgba(255, 255, 255, 0.85);
@@ -116,4 +111,26 @@ text {
   font-size: 12px;
   margin: 5px;
   color: rgba(255, 255, 255, 0.65);
+}
+
+/* Login Button */
+.LoginButtonContainer {
+  margin-top: 20px;
+}
+
+.LoginButton {
+  background: var(--color-primary);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+}
+
+.LoginButton:hover {
+  background: #ff4c4c;
 }
