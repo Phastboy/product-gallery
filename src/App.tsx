@@ -4,9 +4,11 @@ import './App.css'
 import arrow from './assets/arrow.png'
 import lynxLogo from './assets/lynx-logo.png'
 import reactLynxLogo from './assets/react-logo.png'
+import { useNavigate } from 'react-router'
 
 export function App() {
   const [alterLogo, setAlterLogo] = useState(false)
+  const nav = useNavigate();
 
   useEffect(() => {
     console.info('Hello, ReactLynx')
@@ -29,6 +31,9 @@ export function App() {
           </view>
           <text className='Title'>React</text>
           <text className='Subtitle'>on Lynx</text>
+        </view>
+        <view>
+          <text bindtap={() => nav('/home')}>go home</text>
         </view>
         <view className='Content'>
           <image src={arrow} className='Arrow' />
