@@ -1,6 +1,6 @@
 import { useState } from '@lynx-js/react';
-import fetchWithAuth from '../utils/api';
-import { setItem, getItem, removeItem } from '../utils/storage';
+import fetchWithAuth from '../utils/api.ts';
+import { getItem, removeItem, setItem } from '../utils/storage.ts';
 
 const useAuthStore = () => {
   const [user, setUser] = useState(null);
@@ -15,7 +15,7 @@ const useAuthStore = () => {
         },
         body: JSON.stringify({ email, password }),
       });
-      await setItem('accessToken', response.accessToken); // Use native storage
+      setItem('accessToken', await response.accessToken); // Use native storage
       setUser(response.user);
       setIsAuthenticated(true);
     } catch (error) {
@@ -24,14 +24,14 @@ const useAuthStore = () => {
   };
 
   const logout = async () => {
-    await removeItem('accessToken'); // Use native storage
+    removeItem(); // Use native storage
     setUser(null);
     setIsAuthenticated(false);
   };
 
   // Check if the user is already authenticated on app load
   const checkAuth = async () => {
-    const token = await getItem('accessToken'); // Use native storage
+    const token = getItem('accessToken'); // Use native storage
     if (token) {
       setIsAuthenticated(true);
     }

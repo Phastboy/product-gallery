@@ -1,39 +1,9 @@
-:root {
-  background-color: #1a1a1a;
-  --color-primary: #ff6b6b;
-  --color-secondary: #4ecdc4;
-  --color-text: #ffffff;
-  --color-background: #2d2d2d;
-  --color-border: #444444;
-}
+/* Import global styles */
+@import './global.css';
 
-/* Background Animation */
-.Background {
-  position: fixed;
-  background: radial-gradient(
-    circle at 50% 50%,
-    rgba(255, 107, 107, 0.2),
-    rgba(78, 205, 196, 0.2),
-    rgba(45, 45, 45, 1)
-  );
-  width: 200vw;
-  height: 200vh;
-  top: -50vh;
-  left: -50vw;
-  animation: rotateBackground 20s linear infinite;
-}
-
-@keyframes rotateBackground {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* App Container */
+/* App Specific Styles */
 .App {
+  background-color: var(--color-background);
   position: relative;
   min-height: 100vh;
   display: flex;
@@ -41,81 +11,20 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
-  color: var(--color-text);
-}
-
-/* Banner */
-.Banner {
-  flex: 5;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 100;
-}
-
-.Logo {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 8px;
-}
-
-.Logo--static {
-  width: 100px;
-  height: 100px;
-}
-
-.Logo--spin {
-  width: 100px;
-  height: 100px;
-  animation: Logo--spin infinite 2s linear;
-}
-
-@keyframes Logo--spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  text-align: center;
 }
 
 .Title {
   font-size: 36px;
   font-weight: 700;
+  margin-bottom: 10px;
 }
 
 .Subtitle {
-  font-style: italic;
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-/* Content */
-.Content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.Description {
-  font-size: 20px;
-  color: rgba(255, 255, 255, 0.85);
-  margin: 15rpx;
-}
-
-.Hint {
-  font-size: 12px;
-  margin: 5px;
-  color: rgba(255, 255, 255, 0.65);
-}
-
-/* Login Button */
-.LoginButtonContainer {
-  margin-top: 20px;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: var(--color-text-muted);
 }
 
 .LoginButton {
@@ -124,13 +33,17 @@
   border: none;
   border-radius: 25px;
   cursor: pointer;
-  transition: background 0.3s ease;
   font-size: 18px;
   font-weight: 600;
-  color: white;
+  color: var(--color-text);
   text-align: center;
+  transition: background 0.3s ease;
 }
 
 .LoginButton:hover {
-  background: #ff4c4c;
+  background: #3689d2;
+}
+
+.LoginButton:active {
+  background: #3178b9;
 }
