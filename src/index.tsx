@@ -1,18 +1,20 @@
 import { root } from '@lynx-js/react';
 import { MemoryRouter, Route, Routes } from 'react-router';
 import App from './App.tsx';
-import Home from './screens/Home.tsx';
-import Login from './screens/Login.tsx';
-import Posts from './screens/Posts.tsx';
-import ProtectedRoute from './components/ProtectedRoute.tsx';
+import Home from './screens/feed/Home.tsx';
+import Login from './screens/login/Login.tsx';
+import Post from './screens/post/Post.tsx';
+import Profile from './screens/profile/Profile.tsx';
+import Splash from './screens/splash/Splash.tsx';
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute.tsx';
 
 root.render(
   <MemoryRouter>
     <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="/login" element={<Login />} />
+      <Route path='/' element={<App />} />
+      <Route path='/login' element={<Login />} />
       <Route
-        path="/home"
+        path='/home'
         element={
           <ProtectedRoute>
             <Home />
@@ -20,17 +22,24 @@ root.render(
         }
       />
       <Route
-        path="/posts"
+        path='/post/:id'
         element={
           <ProtectedRoute>
-            <Posts />
+            <Post />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path='/profile'
+        element={
+          <ProtectedRoute>
+            <Profile />
           </ProtectedRoute>
         }
       />
     </Routes>
   </MemoryRouter>
 );
-
 if (import.meta.webpackHot) {
   import.meta.webpackHot.accept();
 }

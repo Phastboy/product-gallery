@@ -1,13 +1,13 @@
 // Use Lynx's LocalPersistentStorage module
 const storage = {
-  setItem: async (key: string, value: string) => {
-    await LocalPersistentStorage.setItem(key, value);
+  setItem: (key: string, value: string) => {
+    NativeModules.NativeLocalStorageModule.setStorageItem(key, value);
   },
-  getItem: async (key: string) => {
-    return await LocalPersistentStorage.getItem(key);
+  getItem: (key: string) => {
+    return NativeModules.NativeLocalStorageModule.getStorageItem(key);
   },
-  removeItem: async (key: string) => {
-    await LocalPersistentStorage.removeItem(key);
+  removeItem: () => {
+    NativeModules.NativeLocalStorageModule.clearStorage();
   },
 };
 
