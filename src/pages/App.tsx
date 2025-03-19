@@ -4,6 +4,7 @@ import './App.css'
 import arrow from './assets/arrow.png'
 import lynxLogo from './assets/lynx-logo.png'
 import reactLynxLogo from './assets/react-logo.png'
+import Nav from '../components/nav/Nav.jsx'
 
 export function App() {
   const [alterLogo, setAlterLogo] = useState(false)
@@ -18,7 +19,7 @@ export function App() {
   }, [alterLogo])
 
   return (
-    <view>
+    <scroll-view>
       <view className='Background' />
       <view className='App'>
         <view className='Banner'>
@@ -40,6 +41,7 @@ export function App() {
         </view>
         <view style={{ flex: 1 }}></view>
       </view>
-    </view>
+      <Nav />
+    </scroll-view>
   )
 }
