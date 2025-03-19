@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useState } from '@lynx-js/react'
 
 import './App.css'
-import arrow from './assets/arrow.png'
-import lynxLogo from './assets/lynx-logo.png'
-import reactLynxLogo from './assets/react-logo.png'
+import arrow from '../assets/arrow.png'
+import lynxLogo from '../assets/lynx-logo.png'
+import reactLynxLogo from '../assets/react-logo.png'
 import Nav from '../components/nav/Nav.jsx'
 
 export function App() {
