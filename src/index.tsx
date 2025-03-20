@@ -1,42 +1,19 @@
 import { root } from '@lynx-js/react';
 import { MemoryRouter, Route, Routes } from 'react-router';
-import App from './App.tsx';
-import Home from './screens/feed/Home.tsx';
-import Login from './screens/login/Login.tsx';
-import Post from './screens/post/Post.tsx';
-import Profile from './screens/profile/Profile.tsx';
-import Splash from './screens/splash/Splash.tsx';
-import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute.tsx';
+import { App } from './pages/App.tsx';
+import Home from './pages/Home.tsx';
+import Search from './pages/Search.tsx';
+import ComposePost from './pages/ComposePost.tsx';
+import Profile from './pages/Profile.tsx';
 
 root.render(
   <MemoryRouter>
     <Routes>
       <Route path='/' element={<App />} />
-      <Route path='/login' element={<Login />} />
-      <Route
-        path='/home'
-        element={
-          <ProtectedRoute>
-            <Home />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path='/post/:id'
-        element={
-          <ProtectedRoute>
-            <Post />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path='/profile'
-        element={
-          <ProtectedRoute>
-            <Profile />
-          </ProtectedRoute>
-        }
-      />
+      <Route path='/home' element={<Home />} />
+      <Route path='/search' element={<Search />} />
+      <Route path='/compose-post' element={<ComposePost />} />
+      <Route path='/profile' element={<Profile />} />
     </Routes>
   </MemoryRouter>
 );

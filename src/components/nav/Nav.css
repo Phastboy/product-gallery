@@ -1,0 +1,46 @@
+.Nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 20px;
+  background: var(--color-background);
+  border-top: 1px solid var(--color-border);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.NavItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.NavItem:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.NavIcon {
+  font-size: 20px;
+}
+
+.NavLabel {
+  font-size: 12px;
+  color: var(--color-text);
+}
+
+/* Active State */
+.NavItem.active {
+  background: var(--color-primary);
+}
+
+.NavItem.active .NavIcon,
+.NavItem.active .NavLabel {
+  color: white;
+}

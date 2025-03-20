@@ -1,53 +1,14 @@
-/* Global Styles */
 :root {
-  --color-primary: #4e9af1;
-  --color-secondary: #ffab40;
+  --color-primary: #00aaff;
+  --color-secondary: #ff8800;
   --color-text: #ffffff;
-  --color-background: #1f1f1f; 
-  --color-border: #444444;  
+  --color-background: #000000;
+  --color-border: #ff5733;
   --color-text-muted: #bbbbbb;
   --font-family-sans: 'Arial', sans-serif;
-}
-
-/* Body & Layout */
-body {
-  font-family: var(--font-family-sans);
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   background-color: var(--color-background);
+}
+
+text {
   color: var(--color-text);
 }
-
-/* General Button Styles */
-button {
-  font-size: 16px;
-  font-weight: 600;
-  padding: 10px 20px;
-  border-radius: 25px;
-  cursor: pointer;
-  background-color: var(--color-primary);
-  border: none;
-  color: var(--color-text);
-  transition: background 0.3s ease;
-}
-
-button:hover {
-  background-color: #3689d2;
-}
-
-button:active {
-  background-color: #3178b9;
-}
-
-/* Text Styles */
-h1, h2, h3, h4 {
-  color: var(--color-text);
-  margin: 0;
-}
-
-p {
-  color: var(--color-text-muted);
-  line-height: 1.6;
-}
-
