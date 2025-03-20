@@ -1,0 +1,69 @@
+.PostCard {
+  display: flex;
+  padding: 15px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-background);
+  transition: background 0.3s ease;
+}
+
+.PostCard:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.UserAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.PostContent {
+  flex: 1;
+}
+
+.UserInfo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.UserName {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-right: 5px;
+}
+
+.UserHandle {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-right: 5px;
+}
+
+.Timestamp {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.PostBody {
+  font-size: 14px;
+  color: var(--color-text);
+  margin-bottom: 10px;
+}
+
+.InteractionIcons {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.Icon {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.Icon:hover {
+  color: var(--color-primary);
+}
