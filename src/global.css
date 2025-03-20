@@ -5,7 +5,8 @@
   --color-background: #000000;
   --color-border: #ff5733;
   --color-text-muted: #bbbbbb;
-  --font-family-sans: "Arial", sans-serif;
+  --font-family-sans: 'Arial', sans-serif;
+  background-color: var(--color-background);
 }
 
 text {
